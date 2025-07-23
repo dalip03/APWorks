@@ -36,8 +36,8 @@ const WhyUs = () => {
 
           {/* Bullet Points */}
           <ul className="space-y-4 pt-4">
-            {points.map((point, index) => (
-              <div className="flex items-start gap-2">
+            {points.map((point,index) => (
+              <div key={index} className="flex items-start gap-2">
                 {/* Icon as Image */}
                 <span className="pt-1">
                   <Image

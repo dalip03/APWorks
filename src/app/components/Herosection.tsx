@@ -29,7 +29,7 @@ const Hero = () => {
         </h1>
         <p className="text-base md:text-lg mb-6 md:mb-8 leading-relaxed text-[#1C1C1C99]">
           A&P Works transforms ideas into intelligent systems — merging
-          engineering, AI, and execution governance. We don't just build
+          engineering, AI, and execution governance. We don&apos;t just build
           software. We build outcomes.
         </p>
 

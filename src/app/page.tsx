@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./components/Herosection";
 import HeroInfo from "./components/HeroInfo";
 import WorkWith from "./components/WorkWith";

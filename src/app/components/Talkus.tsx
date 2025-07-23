@@ -33,9 +33,9 @@ const Talkus = () => {
             Ready to Move?
           </h2>
           <p className="text-base md:text-md text-gray-400 mb-8 max-w-md">
-            Whether you're launching a product, reengineering a stock, or
-            scaling your delivery — we're your embedded partner in building
-            who's next.
+            Whether you&apos;re launching a product, reengineering a stock, or
+            scaling your delivery — we&apos;re your embedded partner in building
+            who&apos;s next.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start">
