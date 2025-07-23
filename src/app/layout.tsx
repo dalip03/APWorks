@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IIPWorks",
-  description: "Website by IIPWorks",
+  title: "APWorks",
+  description: "Website by APWorks",
 };
 
 export default function RootLayout({
