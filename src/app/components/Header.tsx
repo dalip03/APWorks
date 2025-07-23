@@ -9,8 +9,8 @@ import Image from "next/image";
 
 const menuItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "#" },
-  { label: "Services", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/ourServices" },
   { label: "Founder", href: "#" },
 ];
 

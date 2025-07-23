@@ -20,7 +20,7 @@ const Talkus = () => {
           {/* Logo */}
           <Link href="/" className="inline-block mb-6">
             <Image
-              src="/img/Logo.png"
+              src="/img/APLogo.png"
               alt="IIPWorks Logo"
               width={120}
               height={40}
@@ -51,7 +51,7 @@ const Talkus = () => {
             <button className="flex items-center justify-center gap-2 border border-[#3686FD] text-white pr-3 pl-6 py-2 rounded-full transition-colors whitespace-nowrap">
               Download Our Overview
               <Image
-                src="/img/arrowDown2.png"
+                src="/img/arrowdown2.png"
                 alt="Download Icon"
                 width={24}
                 height={24}
