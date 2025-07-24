@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <HeroInfo />
       <OurMission />
+      <HeroInfo />
 
       <OurServices />
       <WorkWith />

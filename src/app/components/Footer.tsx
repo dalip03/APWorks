@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo */}
              <Link href="/" className="inline-block">
             <Image
-              src="/img/APLogo.png"
+              src="/img/APLOGO.svg"
               alt="IIPWorks Logo"
               width={200} // increase from 120
               height={80} // increase from 40

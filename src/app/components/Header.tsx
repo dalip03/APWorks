@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link href="/" className="inline-block">
             <Image
-              src="/img/LogoMain.png"
+              src="/img/LOGO.svg"
               alt="IIPWorks Logo"
               width={200} // increase from 120
               height={80} // increase from 40
