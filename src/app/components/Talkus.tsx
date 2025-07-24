@@ -8,7 +8,6 @@ const Talkus = () => {
   return (
     <div className="min-h-screen flex items-center bg-gray-50 px-4 sm:px-6 md:px-16 py-16">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-12 bg-[#1D1E3D] rounded-3xl w-full p-6 md:p-12">
-
         {/* Left side: Text */}
         <motion.div
           className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center items-center md:items-start"
@@ -18,14 +17,14 @@ const Talkus = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Logo */}
-          <Link href="/" className="inline-block mb-6">
+          <Link href="/" className="inline-block">
             <Image
               src="/img/APLogo.png"
               alt="IIPWorks Logo"
-              width={120}
-              height={40}
+              width={200} // increase from 120
+              height={80} // increase from 40
               priority
-              className="h-auto w-auto max-h-40"
+              className="w-[60px] h-auto" // override any limits and control width manually
             />
           </Link>
 

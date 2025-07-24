@@ -9,14 +9,14 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row items-center justify-between mb-6 text-sm font-semibold text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 mb-6">
           {/* Logo */}
-          <Link href="/" className="inline-block">
+             <Link href="/" className="inline-block">
             <Image
               src="/img/APLogo.png"
               alt="IIPWorks Logo"
-              width={120}
-              height={40}
+              width={200} // increase from 120
+              height={80} // increase from 40
               priority
-              className="h-auto w-auto max-h-10"
+              className="w-[60px] h-auto" // override any limits and control width manually
             />
           </Link>
 
@@ -25,17 +25,17 @@ const Footer = () => {
             <img
               src="/img/Instagram.png"
               alt="Instagram"
-              className="w-6 h-6 cursor-pointer hover:opacity-80"
+              className="w-10 h-10 cursor-pointer hover:opacity-80"
             />
             <img
               src="/img/Twitter.png"
               alt="Twitter"
-              className="w-6 h-6 cursor-pointer hover:opacity-80"
+              className="w-10 h-10 cursor-pointer hover:opacity-80"
             />
             <img
               src="/img/Linkedin.png"
               alt="LinkedIn"
-              className="w-6 h-6 cursor-pointer hover:opacity-80"
+              className="w-10 h-10 cursor-pointer hover:opacity-80"
             />
           </div>
         </div>

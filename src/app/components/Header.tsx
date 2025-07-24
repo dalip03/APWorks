@@ -27,10 +27,10 @@ const Header = () => {
             <Image
               src="/img/LogoMain.png"
               alt="IIPWorks Logo"
-              width={120}
-              height={40}
+              width={200} // increase from 120
+              height={80} // increase from 40
               priority
-              className="h-auto w-auto max-h-40"
+              className="w-[60px] h-auto" // override any limits and control width manually
             />
           </Link>
         </div>

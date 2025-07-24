@@ -35,9 +35,11 @@ export default function RootLayout({
       lang="en"
       className={`${urbanist.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
-       <Header />
-      <body className="font-sans antialiased">{children}</body>
-      <Footer/>
+      <body className="font-sans antialiased">
+        {" "}
+        <Header />
+        {children} <Footer />
+      </body>
     </html>
 
     // <html lang="en" className={urbanist.variable}>

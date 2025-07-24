@@ -10,6 +10,7 @@ const services = [
     title: "From Idea to Infrastructure",
     label: "Engineering Services",
     subtitle: "MVPs, Data Platforms, Scalable Systems",
+    subtitle2: "Modern engineering for systems that scale.",
     description:
       "Modern engineering to take you from intent to infrastructure. We architect and deliver production-grade platforms — from apps, data runtimes, and scalable networked foundations — to help you launch faster, scale smarter, and own your IP.",
     image: "/img/service1.png",
@@ -19,6 +20,8 @@ const services = [
     title: "Structure That Drives Delivery",
     label: "ProjectOps Execution Systems",
     subtitle: "PMO Strategy, Delivery Governance, Portfolio Rituals",
+    subtitle2: "Where strategy meets execution velocity.",
+
     description:
       "We embed execution rhythm into your delivery environment — systematic rituals, stakeholder orchestration, and lean governance. Our systems drive throughput without chaos, keeping momentum at every level of your portfolio.",
     image: "/img/service4.png",
@@ -28,6 +31,8 @@ const services = [
     title: "Strategy That Ships",
     label: "Tech & Business Consulting",
     subtitle: "Fractional CTO, Modernization, Strategic IT Advisory",
+    subtitle2: "Embedded leadership. Deep alignment.",
+
     description:
       "We go beyond pitch decks with ambition. Whether it’s high-velocity scaling, compliance, or restructured leadership, we help founders lead confidently with evidence — embedding decision frameworks that scale as you grow.",
     image: "/img/service5.png",
@@ -99,11 +104,18 @@ export default function OurServices() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <p className="text-xs text-blue-600 font-semibold uppercase mb-2">
+                <p className="text-xs text-[#3686FD] font-semibold uppercase mb-2">
                   {activeService.subtitle}
                 </p>
-                <h3 className="text-lg font-bold mb-2">{activeService.title}</h3>
-                <p className="text-sm text-gray-700">{activeService.description}</p>
+                <h3 className="text-lg font-bold mb-2">
+                  {activeService.title}
+                </h3>
+                <p className="text-xs text-[#3686FD99] font-semibold uppercase mb-2">
+                  {activeService.subtitle2}
+                </p>
+                <p className="text-sm text-gray-700">
+                  {activeService.description}
+                </p>
               </div>
             </div>
           </div>

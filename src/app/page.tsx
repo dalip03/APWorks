@@ -10,16 +10,17 @@ import OurMission from "./components/Ourmission";
 
 export default function Home() {
   return (
-   <div>
-      <Hero/>
-      <HeroInfo/>
-      <OurServices/>
-      <WorkWith/>
-      <OurVision/>
-      <Outcomes/>
-      <OurMission/>
-      <WhyUs/>      
-      <Talkus/>
-   </div>
+    <div>
+      <Hero />
+      <HeroInfo />
+      <OurMission />
+
+      <OurServices />
+      <WorkWith />
+      <OurVision />
+      <Outcomes />
+      <WhyUs />
+      <Talkus />
+    </div>
   );
 }
