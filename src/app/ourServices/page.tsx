@@ -1,11 +1,11 @@
 import React from 'react'
-import OurServices from '../components/OurServices'
 import WhyUs from '../components/WhyUs'
+import OurNewServices from '../components/OurNewServices'
 
 function OurWork() {
   return (
     <div>
-      <OurServices/>
+      <OurNewServices/>
       <WhyUs/>
     </div>
   )

@@ -1,43 +1,65 @@
 "use client";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
+
 const OurVision = () => {
   return (
-    <section className="relative w-full h-[80vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="/img/ourvision.png"
-        alt="Vision Background"
-        fill
-        className="object-cover object-center"
-        priority
-      />
-
-      {/* Black Overlay */}
-
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="relative z-20 text-white text-center px-6 max-w-3xl"
-      >
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Vision</h2>
-        <p className="text-base md:text-lg mb-6">
-          To be the most trusted partner for building future-ready systems —
-          where AI, engineering, and governance converge. A&amp;P Works is your
-          operating system for high-velocity transformation — bootstrapped,
-          productized, and legendary in execution.
-        </p>
-        <button className="bg-[#3686FD] hover:bg-[#2e76e4] transition-colors text-white px-6 py-2 rounded-full font-semibold">
-          Contact Us
-        </button>
-      </motion.div>
-    </section>
+    <motion.section
+      className="relative w-full md:h-[420px] flex flex-row items-stretch justify-center overflow-hidden"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      {/* Left half: image with overlay and vision text */}
+      <div className="relative flex-1 flex items-center justify-center ">
+        <Image
+          src="/img/ourvision.png" // your actual background image path
+          alt="Vision Background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/[0.18] z-10" />
+        <motion.div
+          variants={fadeUpVariants}
+          className="relative z-20 flex flex-col items-center justify-center h-full w-full text-white text-center px-6"
+        >
+          <h3 className="text-lg md:text-4xl font-bold mb-2">Our Vision</h3>
+          <p className="text-[13px] md:text-lg leading-relaxed max-w-sm mx-auto">
+            To be the most trusted partner for building future-ready systems — where AI, engineering, and governance converge.
+            A&P Works is your operating system for high-velocity transformation — bootstrapped, productized, and legendary in execution.
+          </p>
+        </motion.div>
+      </div>
+      {/* Right half: solid bg, mission text */}
+      <div className="flex-1 bg-[#23264c] flex items-center justify-center">
+        <motion.div
+          variants={fadeUpVariants}
+          className="text-white text-center px-6 flex flex-col items-center justify-center w-full h-full"
+        >
+          <h3 className="text-lg md:text-4xl font-bold mb-2">Our Mission</h3>
+          <p className="text-[13px] md:text-lg leading-relaxed max-w-sm mx-auto">
+            Empowering founders, CXOs, and delivery leaders through hands-on architecture, AI integration, and ProjectOps systems.
+          </p>
+        </motion.div>
+      </div>
+    </motion.section>
   );
 };
 
