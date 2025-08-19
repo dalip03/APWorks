@@ -5,6 +5,7 @@ import WhyUs from "./components/WhyUs";
 import Outcomes from "./components/Outcomes";
 import Talkus from "./components/Talkus";
 import OurNewServices from "./components/OurNewServices";
+import ProgressDashboard from "./components/ProgressDashboard";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <OurVision />
       <Outcomes />
       <WhyUs />
+      <ProgressDashboard/>
       <Talkus />
     </div>
   );
