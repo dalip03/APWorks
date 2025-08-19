@@ -44,7 +44,7 @@ const progressData: ProgressItem[] = [
 
 const ProgressDashboard = () => {
   return (
-    <section className="py-20 px-6 bg-[#1d1e3d]">
+    <section className="py-20 px-6 bg-[#1d1e3d] overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
