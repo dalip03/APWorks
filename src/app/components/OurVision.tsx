@@ -1,7 +1,10 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
+
+interface visionProps {
+  id?: string;
+}
 
 const containerVariants = {
   hidden: {},
@@ -17,44 +20,40 @@ const fadeUpVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
-const OurVision = () => {
+const OurVision = ({ id }: visionProps) => {
   return (
-    <motion.section
-      className="relative w-full md:h-[420px] flex flex-row items-stretch justify-center overflow-hidden"
+    <motion.section id={id}
+      className="relative w-full min-h-[170px] md:min-h-[210px] flex items-center justify-center overflow-hidden bg-[#1D1E3D]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
+      style={{ borderTop: "2px solid #fff" }}
     >
-      {/* Left half: image with overlay and vision text */}
-      <div className="relative flex-1 flex items-center justify-center border-r border-gray-600 ">
-        <Image
-          src="/img/ourvision.png" // your actual background image path
-          alt="Vision Background"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/[0.18] z-10" />
+      {/* Center vertical divider */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[72%] w-[2px] bg-[#737897] opacity-80 z-10" />
+      {/* Left half: vision */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-6 md:py-12 text-center text-white">
         <motion.div
           variants={fadeUpVariants}
-          className="relative z-20 flex flex-col items-center justify-center h-full w-full text-white text-center px-6"
+          className="w-full flex flex-col items-center justify-center"
         >
-          <h3 className="text-lg md:text-4xl font-bold mb-2">Our Vision</h3>
-          <p className="text-[13px] md:text-lg leading-relaxed max-w-sm mx-auto">
+          <h3 className="text-lg md:text-3xl font-bold mb-2">Our Vision</h3>
+          <p className="text-[14px] md:text-lg leading-relaxed max-w-md mx-auto px-2">
             To be the most trusted partner for building future-ready systems — where AI, engineering, and governance converge.
-            A&P Works is your operating system for high-velocity transformation — bootstrapped, productized, and legendary in execution.
+            
+            A&amp;P Works is your operating system for high-velocity transformation — bootstrapped, productized, and legendary in execution.
           </p>
         </motion.div>
       </div>
-      {/* Right half: solid bg, mission text */}
-      <div className="flex-1 bg-[#23264c] flex items-center justify-center">
+      {/* Right half: mission */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-6 md:py-30 text-center text-white">
         <motion.div
           variants={fadeUpVariants}
-          className="text-white text-center px-6 flex flex-col items-center justify-center w-full h-full"
+          className="w-full flex flex-col items-center justify-center"
         >
-          <h3 className="text-lg md:text-4xl font-bold mb-2">Our Mission</h3>
-          <p className="text-[13px] md:text-lg leading-relaxed max-w-sm mx-auto">
+          <h3 className="text-lg md:text-3xl font-bold mb-2">Our Mission</h3>
+          <p className="text-[14px] md:text-lg leading-relaxed max-w-md mx-auto">
             Empowering founders, CXOs, and delivery leaders through hands-on architecture, AI integration, and ProjectOps systems.
           </p>
         </motion.div>

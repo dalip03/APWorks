@@ -8,15 +8,29 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const menuItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/ourServices" },
-  { label: "Founder", href: "#" },
+  { label: "Home", href: "#home" },
+  { label: "Offerings", href: "#offerings" },
+  { label: "Who we are", href: "#who-we-are" },
+  { label: "Vision", href: "#vision" },
+  { label: "Case studies", href: "#case-studies" },
+  { label: "In-flight", href: "#in-flight" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Smooth scroll handler
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const id = href.replace("#", "");
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -26,40 +40,40 @@ const Header = () => {
           <Link href="/" className="inline-block">
             <Image
               src="/img/LOGO.svg"
-              alt="IIPWorks Logo"
-              width={200} // increase from 120
-              height={80} // increase from 40
+              alt="IIP Works Logo"
+              width={200}
+              height={80}
               priority
-              className="w-[60px] h-auto" // override any limits and control width manually
+              className="w-[60px] h-auto"
             />
           </Link>
         </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-4">
-          {menuItems.map((item) => (
-            <Link
+          {menuItems.map(item => (
+            <a
               key={item.href}
               href={item.href}
+              onClick={(e) => handleScroll(e, item.href)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                pathname === item.href
-                  ? "bg-gray-200 text-black"
-                  : "text-gray-600 hover:bg-gray-100"
+                window.location.hash === item.href ? "bg-gray-200 text-black" : "text-gray-600 hover:bg-gray-100"
               }`}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         {/* Contact Button */}
         <div className="hidden md:block">
-          <Link
-            href="#"
+          <a
+            href="#contact"
+            onClick={(e) => handleScroll(e, "#contact")}
             className="text-sm font-semibold bg-[#3686FD] hover:bg-[#2e76e4] text-white px-4 py-3 rounded-full transition"
           >
             Contact Us
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -93,10 +107,7 @@ const Header = () => {
             >
               {/* Close Button */}
               <div className="flex justify-end mb-6">
-                <button
-                  onClick={() => setIsOpen(false)}
-                  aria-label="Close Menu"
-                >
+                <button onClick={() => setIsOpen(false)} aria-label="Close Menu">
                   <X size={24} color="black" />
                 </button>
               </div>
@@ -108,7 +119,7 @@ const Header = () => {
                   <Link href="/" className="inline-block">
                     <Image
                       src="/img/LogoMain.png"
-                      alt="IIPWorks Logo"
+                      alt="IIP Works Logo"
                       width={120}
                       height={40}
                       priority
@@ -117,27 +128,32 @@ const Header = () => {
                   </Link>
                 </div>
 
-                {menuItems.map((item) => (
-                  <Link
+                {menuItems.map(item => (
+                  <a
                     key={item.href}
                     href={item.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScroll(e, item.href);
+                    }}
                     className={`block px-4 py-2 rounded-md text-sm font-medium transition ${
-                      pathname === item.href
-                        ? "bg-gray-200 text-black"
-                        : "text-gray-600 hover:bg-gray-100"
+                      window.location.hash === item.href ? "bg-gray-200 text-black" : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 ))}
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
+
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScroll(e, "#contact");
+                  }}
                   className="mt-4 block text-sm font-semibold bg-[#3686FD] hover:bg-[#2e76e4] text-white px-4 py-3 rounded-full transition"
                 >
                   Contact Us
-                </Link>
+                </a>
               </nav>
             </motion.aside>
           </>

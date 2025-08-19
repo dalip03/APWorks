@@ -1,16 +1,19 @@
 "use client";
 import React from "react";
+interface serviceProps {
+  id?: string;
+}
 
-const OurNewServices = () => {
+const OurNewServices = ({ id }: serviceProps) => {
   return (
-    <section className="relative bg-[#1D1E3D] min-h-[600px] py-12 px-4 flex flex-col items-center justify-center">
+    <section id={id} className="relative bg-[#1D1E3D] min-h-[600px] py-12 px-4 flex flex-col items-center justify-center">
       {/* Headings */}
       <div className="mb-8 text-center">
-        <div className="text-white/60 text-lg mb-1">(Our Services)</div>
+        <div className="inline-block border border-gray-100/10 rounded-2xl px-4 py-1 text-sm font-medium text-white">
+          Engineered for impact
+        </div>
         <h2 className="text-white font-bold text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
-          Our Industry Leading
-          <br />
-          Tech Solutions
+          Our Offerings
         </h2>
       </div>
 
@@ -27,21 +30,21 @@ const OurNewServices = () => {
 
           <div className="relative z-10">
             <h3 className="font-bold text-2xl mb-1">Engineering Services</h3>
-            <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider">
+            <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider group-hover:text-white">
               MVPs, Data Platforms, Scalable Systems
             </div>
             <div className="font-bold text-3xl mb-1 text-white">
               From Idea to Infrastructure
             </div>
-            <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider">
+            {/* <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider group-hover:text-white">
               Modern engineering for systems that scale.
-            </div>
-            <p className="text-[#FFFFFF99] text-sm pr-30 mb-2">
-              <br />
-              We architect and deliver production-grade platforms—from
-              zero-to-one launches to large-scale rebuilds. Our modular squads,
+            </div> */}
+            <p className="text-[#FFFFFF99] text-sm pr-30 mb-2 group-hover:text-white">
+              
+              We design and deliver production-grade platforms — from
+              zero-to-one MVPs to enterprise-scale rebuilds. Our modular PODs,
               clean architectures, and data-native foundations help you launch
-              faster, scale smarter, and own your IP.
+              faster, scale smarter.
             </p>
           </div>
           {/* Decorative image in right bottom corner */}
@@ -64,20 +67,18 @@ const OurNewServices = () => {
             <h3 className="font-bold text-2xl mb-1">
               ProjectOps Execution Systems
             </h3>
-            <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider">
+            <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider group-hover:text-white">
               PMO Strategy, Delivery Governance, Portfolio Rituals
             </div>
             <div className="font-bold text-3xl mb-1 text-white">
               Structure That Drives Delivery
             </div>
-            <div className="text-[#3686FD] text-sm font-semibold mb-1">
+            {/* <div className="text-[#3686FD] text-sm font-semibold mb-1 group-hover:text-white">
               Where strategy meets execution velocity
-            </div>
-            <p className="text-[#FFFFFF99] text-xs pl-40">
-              We embed execution discipline into your delivery
-              environment—establishing visibility, rituals, and real-time
-              governance. Our systems drive throughput without chaos, unlocking
-              momentum at every level of your portfolio.
+            </div> */}
+            <p className="text-[#FFFFFF99] text-xs pl-40 group-hover:text-white">
+             We embed discipline into execution — creating visibility, cadence, and real-time governance. Our systems ensure throughput without chaos, driving momentum across portfolios and unlocking predictable delivery.
+
             </p>
           </div>
           {/* Decorative image in bottom left corner */}
@@ -98,20 +99,18 @@ const OurNewServices = () => {
 
           <div className="relative z-10">
             <h3 className="font-bold text-2xl mb-1">Tech Consulting</h3>
-            <div className="uppercase text-[#3686FD] font-semibold text-sm mb-1 tracking-wider pr-30">
+            <div className="uppercase text-[#3686FD] font-semibold text-sm mb-1 tracking-wider pr-30 group-hover:text-white">
               Fractional CTO, Modernization, Strategic IT Advisory
             </div>
             <div className="font-bold text-3xl mb-1 text-white">
-              Strategy That Ships
+              Technology That Accelerates Growth
             </div>
-            <div className="text-[#3686FD] font-semibold text-sm mb-1">
+            {/* <div className="text-[#3686FD] font-semibold text-sm mb-1 group-hover:text-white">
               Embedded leadership. Deep alignment.
-            </div>
-            <p className="text-[#FFFFFF99] text-xs pr-36">
-              We align architecture with ambition. Whether it’s replatforming,
-              tech due diligence, or fractional leadership, we help you navigate
-              complexity with confidence—embedding decision frameworks that
-              scale as you grow.
+            </div> */}
+            <p className="text-[#FFFFFF99] text-xs pr-36 group-hover:text-white ">
+             We align technology with ambition. From replatforming and modernization to embedded CTO leadership, we architect scalable systems and decision frameworks that future-proof your business and turn complexity into confidence.
+
             </p>
           </div>
           {/* Decorative image in top right corner */}
@@ -131,20 +130,20 @@ const OurNewServices = () => {
           />
 
           <div className="relative z-10 text-end">
-            <h3 className="font-bold text-2xl mb-1">Business Consulting</h3>
-            <div className="text-[#3686FD] font-semibold text-sm mb-1 tracking-wider pl-36 ">
+            <h3 className="font-bold text-2xl mb-1 group-hover:text-white">
+              Business Consulting
+            </h3>
+            <div className="text-[#3686FD] group-hover:text-white font-semibold text-sm mb-1 tracking-wider pl-36 ">
               Strategy, governance, and growth playbooks for modern enterprises.
             </div>
-            <div className="font-bold text-3xl mb-1 text-white">
+            <div className="font-bold text-3xl mb-1 text-white group-hover:text-white">
               Strategy That Drives Results
             </div>
-            <div className="text-[#3686FD99] text-sm font-semibold mb-1">
+            {/* <div className="text-[#3686FD99] group-hover:text-white text-sm font-semibold mb-1">
               Where strategy meets business sense
-            </div>
-            <p className="text-[#FFFFFF99] text-xs pl-40">
-              We support business growth through operating model advisory,
-              governance and risk frameworks, digital transformation, product
-              rollout strategies, and ESG compliance enablement.
+            </div> */}
+            <p className="text-[#FFFFFF99] group-hover:text-white text-xs pl-40">
+              We help enterprises grow with clarity — through operating model design, risk governance, digital transformation roadmaps, rollout strategies, and ESG compliance. Our playbooks translate business vision into scalable, measurable results.
             </p>
           </div>
           {/* Decorative image in top left corner */}

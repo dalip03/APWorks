@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+interface workProps {
+  id?: string;
+}
 const points = [
   {
     icon: "/img/tick-circle.png",
@@ -26,7 +29,7 @@ const points = [
   },
 ];
 
-const WorkWith = () => {
+const WorkWith = ({ id }: workProps) => {
   // Animation variants
   const slideFadeLeft = {
     hidden: { opacity: 0, x: -40 },
@@ -39,7 +42,7 @@ const WorkWith = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10 bg-white">
+    <section id={id} className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10 bg-white">
       {/* Left: Image */}
       <motion.div
         className="w-full md:w-1/2 flex justify-center"

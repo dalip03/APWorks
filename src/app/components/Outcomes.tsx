@@ -4,9 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+interface outcomesProps {
+  id?: string;
+}
+
 const images = ["/img/slide1.png", "/img/slide2.png", "/img/slide3.png"];
 
-export default function SliderSection() {
+export default function SliderSection({ id }: outcomesProps) {
   const [current, setCurrent] = useState(0);
 
   const prevIndex = (current - 1 + images.length) % images.length;
@@ -21,7 +25,7 @@ export default function SliderSection() {
   };
 
   return (
-    <section className="py-20 px-4 md:px-16 bg-white relative overflow-hidden">
+    <section id={id} className="py-20 px-4 md:px-16 bg-white relative overflow-hidden">
       {/* Animate only this text block */}
       <motion.div
         className="text-center mb-10"

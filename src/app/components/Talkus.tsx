@@ -4,9 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const Talkus = () => {
+interface contactProps {
+  id?: string;
+}
+
+const Talkus = ({ id }: contactProps) => {
   return (
-    <div className="min-h-screen flex items-center bg-gray-50 px-4 sm:px-6 md:px-16 py-16">
+    <div id={id} className="min-h-screen flex items-center bg-gray-50 px-4 sm:px-6 md:px-16 py-16">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-12 bg-[#1D1E3D] rounded-3xl w-full ">
         {/* Left side: Text */}
         <motion.div
