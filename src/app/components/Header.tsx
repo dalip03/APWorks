@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -20,15 +20,32 @@ const menuItems = [
 const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState("");
+
+  // Track hash for active menu styling
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentHash(window.location.hash);
+
+      const onHashChange = () => setCurrentHash(window.location.hash);
+      window.addEventListener("hashchange", onHashChange);
+
+      return () => window.removeEventListener("hashchange", onHashChange);
+    }
+  }, []);
 
   // Smooth scroll handler
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => {
     e.preventDefault();
     setIsOpen(false);
     const id = href.replace("#", "");
     const elem = document.getElementById(id);
     if (elem) {
       elem.scrollIntoView({ behavior: "smooth" });
+      setCurrentHash(href); // update active state immediately
     }
   };
 
@@ -51,13 +68,15 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-4">
-          {menuItems.map(item => (
+          {menuItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={(e) => handleScroll(e, item.href)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                window.location.hash === item.href ? "bg-gray-200 text-black" : "text-gray-600 hover:bg-gray-100"
+                currentHash === item.href
+                  ? "bg-gray-200 text-black"
+                  : "text-gray-600 hover:bg-gray-100"
               }`}
             >
               {item.label}
@@ -128,16 +147,15 @@ const Header = () => {
                   </Link>
                 </div>
 
-                {menuItems.map(item => (
+                {menuItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleScroll(e, item.href);
-                    }}
+                    onClick={(e) => handleScroll(e, item.href)}
                     className={`block px-4 py-2 rounded-md text-sm font-medium transition ${
-                      window.location.hash === item.href ? "bg-gray-200 text-black" : "text-gray-600 hover:bg-gray-100"
+                      currentHash === item.href
+                        ? "bg-gray-200 text-black"
+                        : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
                     {item.label}
@@ -146,10 +164,7 @@ const Header = () => {
 
                 <a
                   href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleScroll(e, "#contact");
-                  }}
+                  onClick={(e) => handleScroll(e, "#contact")}
                   className="mt-4 block text-sm font-semibold bg-[#3686FD] hover:bg-[#2e76e4] text-white px-4 py-3 rounded-full transition"
                 >
                   Contact Us
