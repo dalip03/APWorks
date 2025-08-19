@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 interface ProgressItem {
   category: string;
@@ -43,7 +44,7 @@ const progressData: ProgressItem[] = [
 
 const ProgressDashboard = () => {
   return (
-    <section className="py-20 px-6 bg-[#292947]">
+    <section className="py-20 px-6 bg-[#1d1e3d]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
@@ -54,23 +55,39 @@ const ProgressDashboard = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {progressData.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between"
+              className="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeInOut", delay: idx * 0.15 }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 8px 20px rgba(0,0,0,0.15)",
+              }}
             >
               {/* Category */}
               <div className="text-sm text-gray-400 mb-1">{item.category}</div>
 
               {/* Title */}
-              <h3 className="font-semibold text-gray-900 mb-3">
-                {item.title}
-              </h3>
+              <h3 className="font-semibold text-gray-900 mb-3">{item.title}</h3>
 
-              {/* Progress Bar */}
-              <div className="w-full h-2 bg-gray-200 rounded-full mb-3">
-                <div
+              {/* Progress Bar with Smooth Animation */}
+              <div className="w-full h-2 bg-gray-200 rounded-full mb-3 overflow-hidden">
+                <motion.div
                   className={`h-2 rounded-full ${item.color}`}
-                  style={{ width: `${item.percent}%` }}
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${item.percent}%` }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 1.6,
+                    ease: "easeInOut",
+                    type: "spring",
+                    stiffness: 60,
+                    damping: 15,
+                    delay: 0.3,
+                  }}
                 />
               </div>
 
@@ -79,7 +96,7 @@ const ProgressDashboard = () => {
                 <span className="font-medium">{item.percent}%</span> ·{" "}
                 {item.daysLeft} days left
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
