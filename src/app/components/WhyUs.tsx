@@ -14,7 +14,7 @@ const points = [
 
 const WhyUs = () => {
   return (
-    <section className="px-6 md:px-16 py-20 bg-white">
+    <section className=" max-w-6xl mx-auto px-6 md:px-16 pb-6 bg-white ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text */}
         <motion.div
@@ -73,7 +73,7 @@ const WhyUs = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full"
+          className="w-full "
         >
           <Image
             src="/img/whyus.png"

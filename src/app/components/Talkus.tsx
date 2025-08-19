@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 const Talkus = () => {
   return (
     <div className="min-h-screen flex items-center bg-gray-50 px-4 sm:px-6 md:px-16 py-16">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-12 bg-[#1D1E3D] rounded-3xl w-full p-6 md:p-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-12 bg-[#1D1E3D] rounded-3xl w-full ">
         {/* Left side: Text */}
         <motion.div
-          className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center items-center md:items-start"
+          className="w-full md:w-1/2 px-6 text-center md:text-left flex flex-col justify-center items-center md:items-start"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -61,7 +61,7 @@ const Talkus = () => {
 
         {/* Right side: Image */}
         <motion.div
-          className="w-full md:w-1/2 flex justify-center items-center"
+          className="w-full md:w-1/2 flex justify-center items-center "
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}

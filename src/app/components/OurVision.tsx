@@ -27,7 +27,7 @@ const OurVision = () => {
       variants={containerVariants}
     >
       {/* Left half: image with overlay and vision text */}
-      <div className="relative flex-1 flex items-center justify-center ">
+      <div className="relative flex-1 flex items-center justify-center border-r border-gray-600 ">
         <Image
           src="/img/ourvision.png" // your actual background image path
           alt="Vision Background"

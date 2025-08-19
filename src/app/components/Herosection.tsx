@@ -25,7 +25,7 @@ const Hero = () => {
         viewport={{ once: true }}
       >
         <h1 className="text-3xl md:text-5xl font-bold mb-4 text-black leading-snug">
-          Clarity. Speed. Accountability.
+          From Chaos to Control
         </h1>
         <p className="text-base md:text-lg mb-6 md:mb-8 leading-relaxed text-[#1C1C1C99]">
           A&P Works transforms ideas into intelligent systems — merging
