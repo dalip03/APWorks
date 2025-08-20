@@ -6,6 +6,13 @@ interface HeroProps {
   id?: string;
 }
 export default function Hero({ id }: HeroProps) {
+  const scrollToInFlight = () => {
+    const el = document.getElementById("in-flight");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id={id} className="relative w-full min-h-[90vh] flex items-center justify-center text-white overflow-hidden px-4">
       {/* Background Image */}
@@ -37,11 +44,15 @@ export default function Hero({ id }: HeroProps) {
 
         {/* Buttons */}
         <div className="flex justify-center items-center gap-4 flex-wrap md:flex-nowrap">
-          <button className="flex items-center gap-2 bg-[#3686FD] hover:bg-[#2e76e4] text-white pr-3 pl-6 py-2 rounded-full transition-colors whitespace-nowrap">
+          <button className="flex items-center gap-2 bg-[#3686FD] hover:bg-[#2e76e4] text-white pr-3 pl-6 py-2 rounded-full transition-colors whitespace-nowrap cursor-pointer">
             Start Your Transformation
             <Image src="/img/arrow.png" alt="Arrow" width={24} height={24} />
           </button>
-          <button className="flex items-center gap-2 border border-gray-200 text-white pr-3 pl-6 py-2 rounded-full transition-colors whitespace-nowrap">
+          <button
+            type="button"
+            onClick={scrollToInFlight}
+            className="flex items-center gap-2 border border-gray-200 text-white pr-3 pl-6 py-2 rounded-full transition-colors whitespace-nowrap cursor-pointer"
+          >
             See What We Do
             <Image src="/img/arrow.png" alt="Arrow" width={24} height={24} />
           </button>
@@ -49,5 +60,4 @@ export default function Hero({ id }: HeroProps) {
       </motion.div>
     </section>
   );
-};
-
+}

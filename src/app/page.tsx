@@ -12,12 +12,12 @@ export default function Home() {
   return (
     <div>
       <Hero id="home"/>
+      <ProgressDashboard id="in-flight"/>
       <OurNewServices id="offerings"/>
       <WorkWith id="who-we-are"/>
       <OurVision id="vision"/>
       <Outcomes id="case-studies"/>
       <WhyUs />
-      <ProgressDashboard id="in-flight"/>
       <Talkus id="contact"/>
     </div>
   );

@@ -9,11 +9,11 @@ import Image from "next/image";
 
 const menuItems = [
   { label: "Home", href: "#home" },
+  { label: "In-flight", href: "#in-flight" },
   { label: "Offerings", href: "#offerings" },
   { label: "Who we are", href: "#who-we-are" },
   { label: "Vision", href: "#vision" },
   { label: "Case studies", href: "#case-studies" },
-  { label: "In-flight", href: "#in-flight" },
   { label: "Contact", href: "#contact" },
 ];
 
