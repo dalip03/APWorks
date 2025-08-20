@@ -13,11 +13,11 @@ export default function Home() {
     <div>
       <Hero id="home"/>
       <ProgressDashboard id="in-flight"/>
-      <OurNewServices id="offerings"/>
-      <WorkWith id="who-we-are"/>
       <OurVision id="vision"/>
+      <OurNewServices id="offerings"/>
       <Outcomes id="case-studies"/>
       <WhyUs />
+      <WorkWith id="who-we-are"/>
       <Talkus id="contact"/>
     </div>
   );

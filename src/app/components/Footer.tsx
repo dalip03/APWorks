@@ -1,22 +1,31 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
+  // Scroll to top smoothly
+  const handleScrollTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-[#1D1E3D] text-gray-400 px-6 md:px-20 py-10">
       {/* Top part */}
       <div className="flex flex-col md:flex-row items-center justify-between mb-6 text-sm font-semibold text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 mb-6">
           {/* Logo */}
-             <Link href="/" className="inline-block">
+          <Link href="/" className="inline-block" onClick={handleScrollTop}>
             <Image
               src="/img/APLOGO.svg"
               alt="IIPWorks Logo"
-              width={200} // increase from 120
-              height={80} // increase from 40
+              width={200}
+              height={80}
               priority
-              className="w-[60px] h-auto" // override any limits and control width manually
+              className="w-[60px] h-auto"
             />
           </Link>
 
@@ -40,8 +49,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mb-4 md:mb-0">Pune | Mumbai | Dubai | Remote</div>
-
         <div className="text-gray-500 text-xs">
           © 2025 A&P all rights reserved
         </div>
@@ -58,17 +65,17 @@ const Footer = () => {
             <h2 className="text-lg font-bold">
               Stay updated with the latest tips and news.
             </h2>
-            
-                <form className="flex w-full max-w-md mx-auto pr-1  rounded-full overflow-hidden shadow items-center border border-gray-600">
+
+            <form className="flex w-full max-w-md mx-auto pr-1 rounded-full overflow-hidden shadow items-center border border-gray-600">
               <input
                 type="email"
                 placeholder="Enter your Email"
-                className="flex-grow pl-4 py-3  bg-transparent text-white placeholder-gray-400/60 focus:outline-none"
+                className="flex-grow pl-4 py-3 bg-transparent text-white placeholder-gray-400/60 focus:outline-none"
                 required
               />
               <button
                 type="submit"
-                className="bg-blue-600 text-white font-semibold px-4  py-2 rounded-full transition hover:bg-orange-100"
+                className="bg-blue-600 text-white font-semibold px-4 py-2 rounded-full transition hover:bg-orange-100"
               >
                 Sign up
               </button>
@@ -81,21 +88,70 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Explore</h4>
             <ul className="space-y-2 text-gray-600">
-              <li className="hover:text-gray-300 cursor-pointer">Home</li>
-              <li className="hover:text-gray-300 cursor-pointer">About Us</li>
-              <li className="hover:text-gray-300 cursor-pointer">Solutions</li>
-              <li className="hover:text-gray-300 cursor-pointer">Blog</li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Home
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Offerings
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Case studies
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Contact
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Vision
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-gray-600">
-              <li className="hover:text-gray-300 cursor-pointer">Site Map</li>
-              <li className="hover:text-gray-300 cursor-pointer">
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Site Map
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
                 Terms of Services
               </li>
-              <li className="hover:text-gray-300 cursor-pointer">
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
                 Privacy Policy
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                In-flight
+              </li>
+              <li
+                onClick={handleScrollTop}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                Who we are
               </li>
             </ul>
           </div>
@@ -105,14 +161,6 @@ const Footer = () => {
       {/* Bottom part */}
       <div className="text-center text-gray-600 text-sm space-y-2 sm:space-y-0 sm:space-x-6">
         <div>
-          <a href="mailto:info@gmail.com" className="hover:text-gray-300">
-            info@gmail.com
-          </a>{" "}
-          |{" "}
-          <a href="mailto:sales@gmail.com" className="hover:text-gray-300">
-            sales@gmail.com
-          </a>{" "}
-          |{" "}
           <a
             href="https://www.andpworks.com"
             className="hover:text-gray-300"
