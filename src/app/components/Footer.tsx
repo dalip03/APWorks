@@ -58,18 +58,19 @@ const Footer = () => {
             <h2 className="text-lg font-bold">
               Stay updated with the latest tips and news.
             </h2>
-            <form className="flex flex-col sm:flex-row w-full gap-2 mt-2">
+            
+                <form className="flex w-full max-w-md mx-auto pr-1  rounded-full overflow-hidden shadow items-center border border-gray-600">
               <input
                 type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-2 border border-gray-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your Email"
+                className="flex-grow pl-4 py-3  bg-transparent text-white placeholder-gray-400/60 focus:outline-none"
                 required
               />
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
+                className="bg-blue-600 text-white font-semibold px-4  py-2 rounded-full transition hover:bg-orange-100"
               >
-                Signup
+                Sign up
               </button>
             </form>
           </div>
