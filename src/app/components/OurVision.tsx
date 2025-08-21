@@ -24,7 +24,7 @@ const OurVision = ({ id }: visionProps) => {
   return (
     <motion.section
       id={id}
-      className="relative w-full flex flex-col md:flex-row items-stretch justify-center overflow-hidden bg-[#1D1E3D] border-t-2 border-white"
+      className="relative w-full flex flex-col md:flex-row items-stretch justify-center overflow-hidden bg-[#1D1E3D] "
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

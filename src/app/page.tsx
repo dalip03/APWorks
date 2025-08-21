@@ -29,7 +29,6 @@ export default function Home() {
         style={{ }} // Add this line to satisfy the required prop
         id="home"
       />
-
       <ProgressDashboard id="in-flight" />
       <OurVision id="vision" />
       <OurNewServices id="offerings" />
