@@ -7,12 +7,11 @@ import Talkus from "./components/Talkus";
 import OurNewServices from "./components/OurNewServices";
 import ProgressDashboard from "./components/ProgressDashboard";
 import DotGrid from "./components/Backgrounds/DotGrid";
+import Galaxy from "./components/Backgrounds/Galaxy";
 
 export default function Home() {
   return (
-    <div>
-      
-      
+    <div>  
       <DotGrid
         dotSize={3}
         gap={15}
@@ -28,6 +27,14 @@ export default function Home() {
         className="my-dot-grid"
         style={{ }} // Add this line to satisfy the required prop
         id="home"
+      />
+       <Galaxy
+        hueShift={0}
+        starSpeed={0.6}
+        density={0.6}
+        glowIntensity={0.1}
+        saturation={0}
+        rotationSpeed={0.05}
       />
       <ProgressDashboard id="in-flight" />
       <OurVision id="vision" />
