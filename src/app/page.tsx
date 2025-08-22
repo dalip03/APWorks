@@ -8,10 +8,11 @@ import OurNewServices from "./components/OurNewServices";
 import ProgressDashboard from "./components/ProgressDashboard";
 import DotGrid from "./components/Backgrounds/DotGrid";
 import Galaxy from "./components/Backgrounds/Galaxy";
+import ContactPage from "./components/contact";
 
 export default function Home() {
   return (
-    <div>  
+    <div>
       <DotGrid
         dotSize={3}
         gap={15}
@@ -25,16 +26,16 @@ export default function Home() {
         resistance={750}
         returnDuration={1.5}
         className="my-dot-grid"
-        style={{ }} // Add this line to satisfy the required prop
+        style={{}} // Add this line to satisfy the required prop
         id="home"
       />
-       <Galaxy
-        hueShift={0}
-        starSpeed={0.6}
-        density={0.6}
-        glowIntensity={0.1}
-        saturation={0}
-        rotationSpeed={0.05}
+      <Galaxy
+        mouseRepulsion={true}
+        mouseInteraction={true}
+        density={.5}
+        glowIntensity={0.4}
+        saturation={0.1}
+        hueShift={170}
       />
       <ProgressDashboard id="in-flight" />
       <OurVision id="vision" />
@@ -43,6 +44,7 @@ export default function Home() {
       <WhyUs />
       <WorkWith id="who-we-are" />
       <Talkus id="contact" />
+      <ContactPage/>
     </div>
   );
 }

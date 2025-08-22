@@ -336,9 +336,9 @@ export default function Galaxy({
     <div className="relative bg-black w-full h-screen overflow-hidden" ref={ctnDom} {...rest}>
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10 pointer-events-auto">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-snug">
+<h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-snug">
           From Chaos to Control
-        </h1>
+        </h1>        
         <p className="text-base md:text-lg mb-6 md:mb-8 leading-relaxed text-white max-w-xl">
           A&P Works transforms ideas into intelligent systems — merging engineering, AI,
           and execution governance. We don&apos;t just build software. We build outcomes.
