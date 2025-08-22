@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 function ContactPage() {
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div className="bg-[#1d1e3d] border mb-10 rounded-4xl py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-x-hidden">
       {/* Heading */}
       <motion.h2
-        className="text-3xl font-bold text-center text-gray-900 mb-4"
+        className="md:text-5xl text-3xl font-bold text-center text-white mb-4"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -22,9 +22,9 @@ function ContactPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <p className="text-lg mb-4">Thank you for visiting us!</p>
-        <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
-          We&apos;d love to hear from you. Please fill out the form below, and our team will get back to you within 5 working days.
+        <p className="text-lg mb-4 text-white">Thank you for connecting us!</p>
+        <p className="text-gray-200 mb-8 max-w-3xl mx-auto">
+          We&apos;d love to hear from you. Please fill out the form below, and our team will get back to you.
         </p>
       </motion.div>
 
@@ -38,37 +38,40 @@ function ContactPage() {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <label className="block text-sm font-medium text-gray-700">Name</label>
+            <label className="block text-sm font-medium text-gray-200">Name</label>
             <input
               type="text"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="John.."
+              className="mt-1 block w-full placeholder:text-gray-600 border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-gray-200">Email</label>
             <input
               type="email"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="john@email.com"
+              className="mt-1 block w-full placeholder:text-gray-600 border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Message</label>
+            <label className="block text-sm font-medium text-gray-200">Message</label>
             <textarea
               rows={5}
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="text..."
+              className="mt-1 block w-full placeholder:text-gray-600 border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <button
             type="submit"
-            className="bg-[#233B7C] text-white px-6 py-3 rounded-md cursor-pointer transition"
+            className=" text-white border border-gray-600 px-6 py-3 rounded-xl shadow-md cursor-pointer hover:bg-[#1D1E3D]/90 hover:shadow-amber-50/20 transition"
           >
-            Send Message
+           Send Message
           </button>
         </motion.form>
 
