@@ -9,6 +9,7 @@ import ProgressDashboard from "./components/ProgressDashboard";
 import DotGrid from "./components/Backgrounds/DotGrid";
 import Galaxy from "./components/Backgrounds/Galaxy";
 import ContactPage from "./components/contact";
+import CaseStudies from "./components/CaseStudies";
 
 export default function Home() {
   return (
@@ -40,10 +41,11 @@ export default function Home() {
       <ProgressDashboard id="in-flight" />
       <OurVision id="vision" />
       <OurNewServices id="offerings" />
-      <Outcomes id="case-studies" />
+      <Outcomes />
       <WhyUs />
       <WorkWith id="who-we-are" />
       <Talkus id="contact" />
+      <CaseStudies id="case-studies" />
       <ContactPage/>
     </div>
   );
